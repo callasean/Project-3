@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include header %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Coupon Club</h1>
+            
+        </div>
+        <form action="/query" method="post">
+        <h2>Coupons Available</h2>
+        <ul>
+            <label for="queryStr">Enter Category</label>
+            <input id="queryStr" type="text" name="queryStr" placeholder="example: 'food'">
+            <button id="execute" type="submit">Search</button>
+        </form>
+
+        <h2>Results</h2>
+        <p>Example: "Hardware", "General", "Food", "Electronics", "Tourism"  </p>
+        <ul>
+            <% employees.forEach(function(employee) { %>
+                <li><%= employee.name %> - <%= employee.category %> - <%= employee.percentage_off %>% off</li>
+            <% }); %>
+        </ul>
+    </main>
+
+
+    
+</body>
+</html>
